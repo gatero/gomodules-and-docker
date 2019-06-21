@@ -1,0 +1,17 @@
+version: '3.5'
+services:
+  crud:
+    container_name: $MODULE_CONTAINER
+    image: $MODULE_IMAGE
+    build:
+      context: .
+    restart: always
+    expose:
+      - $MODULE_PORT
+    volumes:
+      - $MODULE_VOLUME
+    env_file:
+      - .env
+networks:
+  default:
+    name: $NETWORK 
